@@ -1,6 +1,7 @@
 package com.example.qualsupervce
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -42,6 +43,12 @@ class Resultado : AppCompatActivity() {
 
         botao.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.btn_browser).setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://github.com/pitercastela/qualSuperVoceE"))
             startActivity(intent)
         }
 
